@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.IO;
 using SocketDocumentShareClient;
-
+using System.Runtime.Serialization.Formatters.Binary;
 namespace WindowsThread
 {
     class ClientSocket
@@ -51,6 +51,7 @@ namespace WindowsThread
             }
 
         }
+        
     }
     class ClientSocketSend : ClientSocket
     {
@@ -60,14 +61,19 @@ namespace WindowsThread
             FileTransport fileToSend = ft as FileTransport;
             try
             {
-                client.Send(fileToSend.returnFileStream());
+                //fileToSend.returnFileStream();
+                FileMemeber fm = new FileMemeber(fileToSend);
+                
+                byte[] b = SerializeNDeserialize.Serialize(fm);
+                Console.WriteLine("长度是{0}", b.Length);
+                
+                client.Send(b);
                 Console.WriteLine("正在发送信息{0}", fileToSend);
-
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("客户端向服务端发送", ex);
+                Console.WriteLine("客户端向服务端发送失败", ex);
             }
 
 
@@ -97,8 +103,8 @@ namespace WindowsThread
                 }
             }
 
-            //mstrToReceive += Encoding.UTF8.GetString(btToReceive, 0, bytes);
-            //client.Close();
+            //FileMemeber fileMemeber = 
+            
 
         }
         

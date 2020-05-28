@@ -124,6 +124,7 @@
             this.btnRename2.TabIndex = 2;
             this.btnRename2.Text = "重命名";
             this.btnRename2.UseVisualStyleBackColor = true;
+            this.btnRename2.Click += new System.EventHandler(this.btnRename_Click);
             // 
             // Form1
             // 

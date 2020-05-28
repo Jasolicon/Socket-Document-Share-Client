@@ -35,9 +35,7 @@ namespace SocketDocumentShareClient
             {
                 path = openFileDialog1.FileName;
                 txtPath.Text = path;
-                string[] n = path.Split('\\');
-
-                filename = n[n.Length - 1];
+                filename = Path.GetFileName(path);
                 btnRename.Enabled = true;
             }
             
@@ -80,9 +78,8 @@ namespace SocketDocumentShareClient
             }
             else
             {
-                string[] n = path.Split('\\');
-                
-                return n[n.Length-1];
+                string n = Path.GetFileName(path);
+                return n;
             }
             
         }

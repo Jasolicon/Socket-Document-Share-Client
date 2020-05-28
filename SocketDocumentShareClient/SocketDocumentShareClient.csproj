@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,6 +65,7 @@
     <Compile Include="RenameForm.Designer.cs">
       <DependentUpon>RenameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SerializeNDeserialize.cs" />
     <Compile Include="Uploading.cs">
       <SubType>Form</SubType>
     </Compile>

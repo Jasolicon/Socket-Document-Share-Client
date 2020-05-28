@@ -26,11 +26,16 @@ namespace SocketDocumentShareClient
             this.Text = string.Format("正在从{0}上传", mPath);
             Thread t = new Thread(new ParameterizedThreadStart(csSend.sendMessage));
             t.Start(ft);
+            if (csSend.ConnectionFailed)
+            {
+                //Thread.CurrentThread.Abort();
+                this.Close();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            Environment.Exit(0);
         }
     }
 }
