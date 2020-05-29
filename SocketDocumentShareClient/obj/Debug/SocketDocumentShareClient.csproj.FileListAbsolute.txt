@@ -6,6 +6,8 @@ E:\CourseWare\Graduate Course\OOAD\AHOMEWORK\SocketDocumentShareClient\SocketDoc
 E:\CourseWare\Graduate Course\OOAD\AHOMEWORK\SocketDocumentShareClient\SocketDocumentShareClient\obj\Debug\SocketDocumentShareClient.csproj.CoreCompileInputs.cache
 E:\CourseWare\Graduate Course\OOAD\AHOMEWORK\SocketDocumentShareClient\SocketDocumentShareClient\obj\Debug\SocketDocumentShareClient.pdb
 E:\CourseWare\Graduate Course\OOAD\AHOMEWORK\SocketDocumentShareClient\SocketDocumentShareClient\obj\Debug\SocketDocumentShareClient.RenameForm.resources
+E:\CourseWare\Graduate Course\OOAD\AHOMEWORK\SocketDocumentShareClient\SocketDocumentShareClient\obj\Debug\SocketDocumentShareClient.ServerFiles.resources
 E:\CourseWare\Graduate Course\OOAD\AHOMEWORK\SocketDocumentShareClient\SocketDocumentShareClient\bin\Debug\SocketDocumentShareClient.exe.config
 E:\CourseWare\Graduate Course\OOAD\AHOMEWORK\SocketDocumentShareClient\SocketDocumentShareClient\bin\Debug\SocketDocumentShareClient.exe
 E:\CourseWare\Graduate Course\OOAD\AHOMEWORK\SocketDocumentShareClient\SocketDocumentShareClient\obj\Debug\SocketDocumentShareClient.exe
+E:\CourseWare\Graduate Course\OOAD\AHOMEWORK\SocketDocumentShareClient\SocketDocumentShareClient\obj\Debug\SocketDocumentShareClient.csprojAssemblyReference.cache

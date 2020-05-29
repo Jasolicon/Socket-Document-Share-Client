@@ -28,7 +28,8 @@ namespace SocketDocumentShareClient
             t.Start(ft);
             if (csSend.ConnectionFailed)
             {
-                //Thread.CurrentThread.Abort();
+                t.Abort();
+                
                 this.Close();
             }
         }

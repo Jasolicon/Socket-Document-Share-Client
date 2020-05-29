@@ -65,6 +65,7 @@
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSelect
             // 
@@ -88,6 +89,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "下载";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tbPathDownload
             // 
@@ -104,7 +106,7 @@
             this.btnSelectFromServer.TabIndex = 1;
             this.btnSelectFromServer.Text = "选择文件";
             this.btnSelectFromServer.UseVisualStyleBackColor = true;
-            this.btnSelectFromServer.Click += new System.EventHandler(this.btnSelect_Click);
+            this.btnSelectFromServer.Click += new System.EventHandler(this.btnSelectFromServer_Click);
             // 
             // btnRename
             // 

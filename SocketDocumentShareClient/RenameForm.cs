@@ -14,10 +14,10 @@ namespace SocketDocumentShareClient
     {
         public string newname = "";
         public Form1 f;
-        public RenameForm()
+        public RenameForm(Form1 form)
         {
             InitializeComponent();
-            f = (Form1)this.Owner;
+            f = form;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

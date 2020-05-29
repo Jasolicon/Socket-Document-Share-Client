@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientSocket.cs" />
+    <Compile Include="FileSavec.cs" />
     <Compile Include="FileTransport.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -66,6 +67,12 @@
       <DependentUpon>RenameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SerializeNDeserialize.cs" />
+    <Compile Include="ServerFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerFiles.Designer.cs">
+      <DependentUpon>ServerFiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Uploading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +93,9 @@
     </Compile>
     <EmbeddedResource Include="RenameForm.resx">
       <DependentUpon>RenameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerFiles.resx">
+      <DependentUpon>ServerFiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Uploading.resx">
       <DependentUpon>Uploading.cs</DependentUpon>

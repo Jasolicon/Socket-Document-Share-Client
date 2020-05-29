@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsThread;
 
 namespace SocketDocumentShareClient
 {
@@ -16,6 +19,8 @@ namespace SocketDocumentShareClient
     {
         private string path;
         public string filename = "";
+        private string strFileChoose;
+        ClientSocketReceive csrAsk;
         public Form1()
         {
             InitializeComponent();
@@ -59,13 +64,13 @@ namespace SocketDocumentShareClient
                 MessageBox.Show(filename);
             }
         }
-        private delegate void DelRename(string str);
-        DelRename delRename;
+        //private delegate void DelRename(string str);
+        //DelRename delRename;
         private string rename()
         {
             string name = "";
-            RenameForm form = new RenameForm();
-            delRename += form.setName;
+            RenameForm form = new RenameForm(this);
+            //delRename += form.setName;
             DialogResult dr = form.ShowDialog();
             if (dr == DialogResult.OK)
             {
@@ -82,6 +87,53 @@ namespace SocketDocumentShareClient
                 return n;
             }
             
+        }
+
+        private void btnSelectFromServer_Click(object sender, EventArgs e)
+        {
+            csrAsk = new ClientSocketReceive("192.168.1.105",182);
+            Thread t = new Thread(new ThreadStart(csrAsk.sendRequest));//发送下载文件请求
+            t.Start();
+            t.Join();
+            Thread twait = new Thread(new ThreadStart(csrAsk.getMessageFromServer));//回收文件列表
+            twait.Start();
+            twait.Join();
+            string[] strFileList = new string[100];
+            try
+            {
+                strFileList = SerializeNDeserialize.Deserialize(csrAsk.BtToReceiveList) as string[];
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("获得文件列表错误{0}", ex);
+            }
+            //twait.Abort();
+
+            ServerFiles f = new ServerFiles(this,strFileList);
+            //f.Show();
+            if(f.ShowDialog() == DialogResult.OK)
+            {
+                tbPathDownload.Text = f.strGetFileChosen;
+                strFileChoose = f.strGetFileChosen;
+                
+            }
+            
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //csrAsk = new ClientSocketReceive("192.168.1.105", 182);
+            Thread tSend = new Thread(new ParameterizedThreadStart(csrAsk.SendMessage));
+            tSend.Start(strFileChoose);
+            tSend.Join();
+            Thread tDownload = new Thread(new ThreadStart(csrAsk.downloadFile));
+            tDownload.Start();
+            tDownload.Join();
         }
     }
 }
