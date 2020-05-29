@@ -10,4 +10,3 @@ E:\CourseWare\Graduate Course\OOAD\AHOMEWORK\SocketDocumentShareClient\SocketDoc
 E:\CourseWare\Graduate Course\OOAD\AHOMEWORK\SocketDocumentShareClient\SocketDocumentShareClient\bin\Debug\SocketDocumentShareClient.exe.config
 E:\CourseWare\Graduate Course\OOAD\AHOMEWORK\SocketDocumentShareClient\SocketDocumentShareClient\bin\Debug\SocketDocumentShareClient.exe
 E:\CourseWare\Graduate Course\OOAD\AHOMEWORK\SocketDocumentShareClient\SocketDocumentShareClient\obj\Debug\SocketDocumentShareClient.exe
-E:\CourseWare\Graduate Course\OOAD\AHOMEWORK\SocketDocumentShareClient\SocketDocumentShareClient\obj\Debug\SocketDocumentShareClient.csprojAssemblyReference.cache

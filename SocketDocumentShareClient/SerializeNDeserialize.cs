@@ -23,6 +23,7 @@ namespace SocketDocumentShareClient
             BinaryFormatter formatter = new BinaryFormatter();
             MemoryStream rems = new MemoryStream(data);
             //rems.Seek(0, SeekOrigin.Begin);
+            //rems.Position = 0;
             data = null;
             return formatter.Deserialize(rems);
         }

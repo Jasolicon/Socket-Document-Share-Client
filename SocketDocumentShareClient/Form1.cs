@@ -95,6 +95,7 @@ namespace SocketDocumentShareClient
             Thread t = new Thread(new ThreadStart(csrAsk.sendRequest));//发送下载文件请求
             t.Start();
             t.Join();
+            t.Abort();
             Thread twait = new Thread(new ThreadStart(csrAsk.getMessageFromServer));//回收文件列表
             twait.Start();
             twait.Join();

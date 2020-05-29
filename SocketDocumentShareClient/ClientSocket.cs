@@ -125,21 +125,21 @@ namespace WindowsThread
         {
             //从服务器接收信息
             int bytes = -1;
-            //while (true)
-            //{
+            while (true)
+            {
                 
                 try
                 {
                     bytes = client.Receive(btToReceiveList, btToReceiveList.Length, 0);
-                    //if (bytes != -1)
-                    //    break;
+                    if (bytes != -1)
+                        break;
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("从服务器接受列表信息失败：", ex);
-                    //break;
+                    break;
                 }
-            //}
+            }
 
         }
 
